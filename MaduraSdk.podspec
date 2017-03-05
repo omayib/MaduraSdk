@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "MaduraSdk"
-    s.version      = "0.0.3"
+    s.version      = "0.0.4"
     s.summary      = "make it simple dev call enggine."
 
     s.homepage     = "http://qiscus.com"
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.author       = { "akbarul@qiscus.co" => "akbarul@qiscus.co" }
 
-    s.platform     = :ios, "9.0"
+    s.platform     = :ios, "10.0"
 
     s.source       = { :git => 'https://github.com/omayib/MaduraSdk.git', :tag => s.version.to_s}
 
