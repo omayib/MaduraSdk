@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D26A9EF1E429358009B73EA /* UIOnCallCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26A9ED1E429358009B73EA /* UIOnCallCompletedVC.swift */; };
+		3D26A9F01E429358009B73EA /* UIOnCallCompletedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D26A9EE1E429358009B73EA /* UIOnCallCompletedVC.xib */; };
+		3D2F57131E3B161600C0985B /* MDCallDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F57121E3B161600C0985B /* MDCallDelegate.swift */; };
+		3D2F57151E3B16B600C0985B /* MDCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F57141E3B16B600C0985B /* MDCall.swift */; };
+		3D2F57171E3B1A2F00C0985B /* UICallCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F57161E3B1A2F00C0985B /* UICallCommand.swift */; };
+		3D2F57191E3B1AA200C0985B /* CallEngineObserved.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F57181E3B1AA200C0985B /* CallEngineObserved.swift */; };
+		3D2F571C1E3B1B8200C0985B /* UIIncomingCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F571A1E3B1B8200C0985B /* UIIncomingCallVC.swift */; };
+		3D2F571D1E3B1B8200C0985B /* UIIncomingCallVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2F571B1E3B1B8200C0985B /* UIIncomingCallVC.xib */; };
+		3D2F57201E3B1BBA00C0985B /* UIOngoingCallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F571E1E3B1BBA00C0985B /* UIOngoingCallVC.swift */; };
+		3D2F57211E3B1BBB00C0985B /* UIOngoingCallVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D2F571F1E3B1BBA00C0985B /* UIOngoingCallVC.xib */; };
+		3D5E74831E2AD5C7007E6C12 /* MaduraSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5E74791E2AD5C7007E6C12 /* MaduraSdk.framework */; };
+		3D5E74881E2AD5C7007E6C12 /* MaduraSdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E74871E2AD5C7007E6C12 /* MaduraSdkTests.swift */; };
+		3D5E748A1E2AD5C7007E6C12 /* MaduraSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D5E747C1E2AD5C7007E6C12 /* MaduraSdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D5E74D01E2AD95F007E6C12 /* MaduraSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E74CF1E2AD95F007E6C12 /* MaduraSdk.swift */; };
+		3D68B3531E3B3E430060DB72 /* CallEngineMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D68B3521E3B3E430060DB72 /* CallEngineMediator.swift */; };
+		3D68B35D1E3B58B60060DB72 /* MaduraCallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2F570E1E3B065100C0985B /* MaduraCallKit.framework */; };
+		3D68B35E1E3B58BE0060DB72 /* MaduraSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2F570F1E3B065100C0985B /* MaduraSignalKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		3DA458291E6C764400F83D3D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3DA458261E6C764400F83D3D /* LICENSE */; };
+		3DA4582A1E6C764400F83D3D /* MaduraSdk.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3DA458271E6C764400F83D3D /* MaduraSdk.podspec */; };
+		3DA4582B1E6C764400F83D3D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA458281E6C764400F83D3D /* README.md */; };
+		3DB99B881E3BEB7F00331F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB99B871E3BEB7F00331F59 /* Assets.xcassets */; };
+		7F601DED4EB60C530B73C6C4 /* Pods_MaduraSdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0203B898AC1101D2F7A8D /* Pods_MaduraSdkTests.framework */; };
+		A1EAF2F9128FF1D5D06646CA /* Pods_MaduraSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E8534F94918454F9CD1721 /* Pods_MaduraSdk.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D5E74841E2AD5C7007E6C12 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D5E74701E2AD5C7007E6C12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D5E74781E2AD5C7007E6C12;
+			remoteInfo = MaduraSdk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C5D1C22E085229827640CFB /* Pods-MaduraSdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D26A9ED1E429358009B73EA /* UIOnCallCompletedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnCallCompletedVC.swift; sourceTree = "<group>"; };
+		3D26A9EE1E429358009B73EA /* UIOnCallCompletedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIOnCallCompletedVC.xib; sourceTree = "<group>"; };
+		3D2F570E1E3B065100C0985B /* MaduraCallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaduraCallKit.framework; path = "../Build/Products/Debug-iphoneos/MaduraCallKit.framework"; sourceTree = "<group>"; };
+		3D2F570F1E3B065100C0985B /* MaduraSignalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaduraSignalKit.framework; path = "../Build/Products/Debug-iphoneos/MaduraSignalKit.framework"; sourceTree = "<group>"; };
+		3D2F57121E3B161600C0985B /* MDCallDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDCallDelegate.swift; sourceTree = "<group>"; };
+		3D2F57141E3B16B600C0985B /* MDCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDCall.swift; sourceTree = "<group>"; };
+		3D2F57161E3B1A2F00C0985B /* UICallCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICallCommand.swift; sourceTree = "<group>"; };
+		3D2F57181E3B1AA200C0985B /* CallEngineObserved.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallEngineObserved.swift; sourceTree = "<group>"; };
+		3D2F571A1E3B1B8200C0985B /* UIIncomingCallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIIncomingCallVC.swift; sourceTree = "<group>"; };
+		3D2F571B1E3B1B8200C0985B /* UIIncomingCallVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIIncomingCallVC.xib; sourceTree = "<group>"; };
+		3D2F571E1E3B1BBA00C0985B /* UIOngoingCallVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOngoingCallVC.swift; sourceTree = "<group>"; };
+		3D2F571F1E3B1BBA00C0985B /* UIOngoingCallVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIOngoingCallVC.xib; sourceTree = "<group>"; };
+		3D5E74791E2AD5C7007E6C12 /* MaduraSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MaduraSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D5E747C1E2AD5C7007E6C12 /* MaduraSdk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaduraSdk.h; sourceTree = "<group>"; };
+		3D5E747D1E2AD5C7007E6C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D5E74821E2AD5C7007E6C12 /* MaduraSdkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaduraSdkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D5E74871E2AD5C7007E6C12 /* MaduraSdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaduraSdkTests.swift; sourceTree = "<group>"; };
+		3D5E74891E2AD5C7007E6C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D5E74CF1E2AD95F007E6C12 /* MaduraSdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaduraSdk.swift; sourceTree = "<group>"; };
+		3D68B3521E3B3E430060DB72 /* CallEngineMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallEngineMediator.swift; sourceTree = "<group>"; };
+		3DA458261E6C764400F83D3D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3DA458271E6C764400F83D3D /* MaduraSdk.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MaduraSdk.podspec; sourceTree = "<group>"; };
+		3DA458281E6C764400F83D3D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3DB99B871E3BEB7F00331F59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40E8534F94918454F9CD1721 /* Pods_MaduraSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaduraSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A0C01108711D885AAE00878 /* Pods-MaduraSdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8B0203B898AC1101D2F7A8D /* Pods_MaduraSdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaduraSdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C860204825F2B41CAD104AE9 /* Pods-MaduraSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk.debug.xcconfig"; sourceTree = "<group>"; };
+		D95864757DFE1003C58B0432 /* Pods-MaduraSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D5E74751E2AD5C7007E6C12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D68B35E1E3B58BE0060DB72 /* MaduraSignalKit.framework in Frameworks */,
+				3D68B35D1E3B58B60060DB72 /* MaduraCallKit.framework in Frameworks */,
+				A1EAF2F9128FF1D5D06646CA /* Pods_MaduraSdk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D5E747F1E2AD5C7007E6C12 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D5E74831E2AD5C7007E6C12 /* MaduraSdk.framework in Frameworks */,
+				7F601DED4EB60C530B73C6C4 /* Pods_MaduraSdkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D5E746F1E2AD5C7007E6C12 = {
+			isa = PBXGroup;
+			children = (
+				3DA458251E6C71EF00F83D3D /* Podspec metadata */,
+				3DB99B871E3BEB7F00331F59 /* Assets.xcassets */,
+				3D5E747B1E2AD5C7007E6C12 /* MaduraSdk */,
+				3D5E74861E2AD5C7007E6C12 /* MaduraSdkTests */,
+				3D5E747A1E2AD5C7007E6C12 /* Products */,
+				3D5E74D11E2AD98D007E6C12 /* Frameworks */,
+				D98EACA85C86C39EC8A8904A /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		3D5E747A1E2AD5C7007E6C12 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D5E74791E2AD5C7007E6C12 /* MaduraSdk.framework */,
+				3D5E74821E2AD5C7007E6C12 /* MaduraSdkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D5E747B1E2AD5C7007E6C12 /* MaduraSdk */ = {
+			isa = PBXGroup;
+			children = (
+				3D5E747C1E2AD5C7007E6C12 /* MaduraSdk.h */,
+				3D5E747D1E2AD5C7007E6C12 /* Info.plist */,
+				3D5E74CF1E2AD95F007E6C12 /* MaduraSdk.swift */,
+				3D2F57121E3B161600C0985B /* MDCallDelegate.swift */,
+				3D2F57141E3B16B600C0985B /* MDCall.swift */,
+				3D2F57161E3B1A2F00C0985B /* UICallCommand.swift */,
+				3D2F57181E3B1AA200C0985B /* CallEngineObserved.swift */,
+				3D2F571A1E3B1B8200C0985B /* UIIncomingCallVC.swift */,
+				3D2F571B1E3B1B8200C0985B /* UIIncomingCallVC.xib */,
+				3D2F571E1E3B1BBA00C0985B /* UIOngoingCallVC.swift */,
+				3D2F571F1E3B1BBA00C0985B /* UIOngoingCallVC.xib */,
+				3D68B3521E3B3E430060DB72 /* CallEngineMediator.swift */,
+				3D26A9ED1E429358009B73EA /* UIOnCallCompletedVC.swift */,
+				3D26A9EE1E429358009B73EA /* UIOnCallCompletedVC.xib */,
+			);
+			path = MaduraSdk;
+			sourceTree = "<group>";
+		};
+		3D5E74861E2AD5C7007E6C12 /* MaduraSdkTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D5E74871E2AD5C7007E6C12 /* MaduraSdkTests.swift */,
+				3D5E74891E2AD5C7007E6C12 /* Info.plist */,
+			);
+			path = MaduraSdkTests;
+			sourceTree = "<group>";
+		};
+		3D5E74D11E2AD98D007E6C12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D2F570E1E3B065100C0985B /* MaduraCallKit.framework */,
+				3D2F570F1E3B065100C0985B /* MaduraSignalKit.framework */,
+				40E8534F94918454F9CD1721 /* Pods_MaduraSdk.framework */,
+				A8B0203B898AC1101D2F7A8D /* Pods_MaduraSdkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DA458251E6C71EF00F83D3D /* Podspec metadata */ = {
+			isa = PBXGroup;
+			children = (
+				3DA458261E6C764400F83D3D /* LICENSE */,
+				3DA458271E6C764400F83D3D /* MaduraSdk.podspec */,
+				3DA458281E6C764400F83D3D /* README.md */,
+			);
+			name = "Podspec metadata";
+			sourceTree = "<group>";
+		};
+		D98EACA85C86C39EC8A8904A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C860204825F2B41CAD104AE9 /* Pods-MaduraSdk.debug.xcconfig */,
+				D95864757DFE1003C58B0432 /* Pods-MaduraSdk.release.xcconfig */,
+				8A0C01108711D885AAE00878 /* Pods-MaduraSdkTests.debug.xcconfig */,
+				3C5D1C22E085229827640CFB /* Pods-MaduraSdkTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3D5E74761E2AD5C7007E6C12 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D5E748A1E2AD5C7007E6C12 /* MaduraSdk.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3D5E74781E2AD5C7007E6C12 /* MaduraSdk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D5E748D1E2AD5C7007E6C12 /* Build configuration list for PBXNativeTarget "MaduraSdk" */;
+			buildPhases = (
+				B2DF3ED96916DC9424DED3C6 /* [CP] Check Pods Manifest.lock */,
+				3D5E74741E2AD5C7007E6C12 /* Sources */,
+				3D5E74751E2AD5C7007E6C12 /* Frameworks */,
+				3D5E74761E2AD5C7007E6C12 /* Headers */,
+				3D5E74771E2AD5C7007E6C12 /* Resources */,
+				0B0F486F10784263F322021A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MaduraSdk;
+			productName = MaduraSdk;
+			productReference = 3D5E74791E2AD5C7007E6C12 /* MaduraSdk.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3D5E74811E2AD5C7007E6C12 /* MaduraSdkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D5E74901E2AD5C7007E6C12 /* Build configuration list for PBXNativeTarget "MaduraSdkTests" */;
+			buildPhases = (
+				36857C9C5A8501000599CFD5 /* [CP] Check Pods Manifest.lock */,
+				3D5E747E1E2AD5C7007E6C12 /* Sources */,
+				3D5E747F1E2AD5C7007E6C12 /* Frameworks */,
+				3D5E74801E2AD5C7007E6C12 /* Resources */,
+				36F75CF176A187A17FD515A8 /* [CP] Embed Pods Frameworks */,
+				F5DCB77E103835154DEC381A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D5E74851E2AD5C7007E6C12 /* PBXTargetDependency */,
+			);
+			name = MaduraSdkTests;
+			productName = MaduraSdkTests;
+			productReference = 3D5E74821E2AD5C7007E6C12 /* MaduraSdkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D5E74701E2AD5C7007E6C12 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = qiscus;
+				TargetAttributes = {
+					3D5E74781E2AD5C7007E6C12 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = QG8KA4P8TE;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					3D5E74811E2AD5C7007E6C12 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = QG8KA4P8TE;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3D5E74731E2AD5C7007E6C12 /* Build configuration list for PBXProject "MaduraSdk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3D5E746F1E2AD5C7007E6C12;
+			productRefGroup = 3D5E747A1E2AD5C7007E6C12 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D5E74781E2AD5C7007E6C12 /* MaduraSdk */,
+				3D5E74811E2AD5C7007E6C12 /* MaduraSdkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D5E74771E2AD5C7007E6C12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB99B881E3BEB7F00331F59 /* Assets.xcassets in Resources */,
+				3D26A9F01E429358009B73EA /* UIOnCallCompletedVC.xib in Resources */,
+				3D2F57211E3B1BBB00C0985B /* UIOngoingCallVC.xib in Resources */,
+				3D2F571D1E3B1B8200C0985B /* UIIncomingCallVC.xib in Resources */,
+				3DA458291E6C764400F83D3D /* LICENSE in Resources */,
+				3DA4582A1E6C764400F83D3D /* MaduraSdk.podspec in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D5E74801E2AD5C7007E6C12 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B0F486F10784263F322021A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36857C9C5A8501000599CFD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		36F75CF176A187A17FD515A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2DF3ED96916DC9424DED3C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5DCB77E103835154DEC381A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D5E74741E2AD5C7007E6C12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D2F57171E3B1A2F00C0985B /* UICallCommand.swift in Sources */,
+				3D5E74D01E2AD95F007E6C12 /* MaduraSdk.swift in Sources */,
+				3DA4582B1E6C764400F83D3D /* README.md in Sources */,
+				3D68B3531E3B3E430060DB72 /* CallEngineMediator.swift in Sources */,
+				3D2F57151E3B16B600C0985B /* MDCall.swift in Sources */,
+				3D2F57191E3B1AA200C0985B /* CallEngineObserved.swift in Sources */,
+				3D2F571C1E3B1B8200C0985B /* UIIncomingCallVC.swift in Sources */,
+				3D2F57131E3B161600C0985B /* MDCallDelegate.swift in Sources */,
+				3D26A9EF1E429358009B73EA /* UIOnCallCompletedVC.swift in Sources */,
+				3D2F57201E3B1BBA00C0985B /* UIOngoingCallVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D5E747E1E2AD5C7007E6C12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D5E74881E2AD5C7007E6C12 /* MaduraSdkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D5E74851E2AD5C7007E6C12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D5E74781E2AD5C7007E6C12 /* MaduraSdk */;
+			targetProxy = 3D5E74841E2AD5C7007E6C12 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D5E748B1E2AD5C7007E6C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3D5E748C1E2AD5C7007E6C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3D5E748E1E2AD5C7007E6C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C860204825F2B41CAD104AE9 /* Pods-MaduraSdk.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MaduraSdk/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = qisc.us.MaduraSdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3D5E748F1E2AD5C7007E6C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D95864757DFE1003C58B0432 /* Pods-MaduraSdk.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = MaduraSdk/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = qisc.us.MaduraSdk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3D5E74911E2AD5C7007E6C12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0C01108711D885AAE00878 /* Pods-MaduraSdkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
+				INFOPLIST_FILE = MaduraSdkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = qisc.us.MaduraSdkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3D5E74921E2AD5C7007E6C12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C5D1C22E085229827640CFB /* Pods-MaduraSdkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = QG8KA4P8TE;
+				INFOPLIST_FILE = MaduraSdkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = qisc.us.MaduraSdkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D5E74731E2AD5C7007E6C12 /* Build configuration list for PBXProject "MaduraSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D5E748B1E2AD5C7007E6C12 /* Debug */,
+				3D5E748C1E2AD5C7007E6C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D5E748D1E2AD5C7007E6C12 /* Build configuration list for PBXNativeTarget "MaduraSdk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D5E748E1E2AD5C7007E6C12 /* Debug */,
+				3D5E748F1E2AD5C7007E6C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D5E74901E2AD5C7007E6C12 /* Build configuration list for PBXNativeTarget "MaduraSdkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D5E74911E2AD5C7007E6C12 /* Debug */,
+				3D5E74921E2AD5C7007E6C12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D5E74701E2AD5C7007E6C12 /* Project object */;
+}
