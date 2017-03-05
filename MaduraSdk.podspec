@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "MaduraSdk"
-    s.version      = "0.0.4"
+    s.version      = "0.0.5"
     s.summary      = "make it simple dev call enggine."
 
     s.homepage     = "http://qiscus.com"
@@ -17,6 +17,9 @@ Pod::Spec.new do |s|
     s.source_files  = "MaduraSdk/*.{h,m,swift,xib}"
 
     s.resources = "*.xcassets"
+
+    s.pod_target_xcconfig = {"OTHER_LDFLAGS" => "'-read_only_relocs' 'suppress'"}
+    s.requires_arc = true
 
     s.dependency 'MaduraSignalKit'
     s.dependency 'MaduraCallKit'
