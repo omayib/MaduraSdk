@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "MaduraSdk"
-    s.version      = "0.0.7"
+    s.version      = "0.0.8"
     s.summary      = "make it simple dev call enggine."
 
     s.homepage     = "http://qiscus.com"
@@ -12,8 +12,7 @@ Pod::Spec.new do |s|
 
     s.platform     = :ios, "10.0"
 
-    #s.source       = { :git => 'https://github.com/omayib/MaduraSdk.git', :tag => s.version.to_s}
-    s.source       = { :git => 'https://gitlab.devops.mhealth.tech/omayib/NewMaduraSdk.git', :tag => s.version.to_s}
+    s.source       = { :git => 'https://github.com/omayib/MaduraSdk.git', :tag => s.version.to_s}
 
     s.source_files  = "MaduraSdk/*.{h,m,swift,xib}"
 
