@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1D369A197A801381CD7FDA /* Pods_MaduraSdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7EDA4A6E3C3A462A0D2E845 /* Pods_MaduraSdkTests.framework */; };
 		3D26A9EF1E429358009B73EA /* UIOnCallCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D26A9ED1E429358009B73EA /* UIOnCallCompletedVC.swift */; };
 		3D26A9F01E429358009B73EA /* UIOnCallCompletedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D26A9EE1E429358009B73EA /* UIOnCallCompletedVC.xib */; };
 		3D2F57131E3B161600C0985B /* MDCallDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2F57121E3B161600C0985B /* MDCallDelegate.swift */; };
@@ -27,9 +28,10 @@
 		3DA458291E6C764400F83D3D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3DA458261E6C764400F83D3D /* LICENSE */; };
 		3DA4582A1E6C764400F83D3D /* MaduraSdk.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3DA458271E6C764400F83D3D /* MaduraSdk.podspec */; };
 		3DA4582B1E6C764400F83D3D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3DA458281E6C764400F83D3D /* README.md */; };
+		3DB1D58E1E6DF56A007016FF /* CallKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1D58D1E6DF56A007016FF /* CallKitManager.swift */; };
+		3DB1D5901E6DF590007016FF /* CallProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB1D58F1E6DF590007016FF /* CallProviderDelegate.swift */; };
 		3DB99B881E3BEB7F00331F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB99B871E3BEB7F00331F59 /* Assets.xcassets */; };
-		7F601DED4EB60C530B73C6C4 /* Pods_MaduraSdkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8B0203B898AC1101D2F7A8D /* Pods_MaduraSdkTests.framework */; };
-		A1EAF2F9128FF1D5D06646CA /* Pods_MaduraSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E8534F94918454F9CD1721 /* Pods_MaduraSdk.framework */; };
+		8C503FFE898D26B5F901E172 /* Pods_MaduraSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0C733230B35D18AE2FCC63 /* Pods_MaduraSdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C5D1C22E085229827640CFB /* Pods-MaduraSdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests.release.xcconfig"; sourceTree = "<group>"; };
+		01B32087A7D7F9064BCC2D4A /* Pods-MaduraSdkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests.release.xcconfig"; sourceTree = "<group>"; };
 		3D26A9ED1E429358009B73EA /* UIOnCallCompletedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIOnCallCompletedVC.swift; sourceTree = "<group>"; };
 		3D26A9EE1E429358009B73EA /* UIOnCallCompletedVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIOnCallCompletedVC.xib; sourceTree = "<group>"; };
 		3D2F570E1E3B065100C0985B /* MaduraCallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaduraCallKit.framework; path = "../Build/Products/Debug-iphoneos/MaduraCallKit.framework"; sourceTree = "<group>"; };
@@ -67,12 +69,14 @@
 		3DA458261E6C764400F83D3D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3DA458271E6C764400F83D3D /* MaduraSdk.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MaduraSdk.podspec; sourceTree = "<group>"; };
 		3DA458281E6C764400F83D3D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3DB1D58D1E6DF56A007016FF /* CallKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKitManager.swift; sourceTree = "<group>"; };
+		3DB1D58F1E6DF590007016FF /* CallProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallProviderDelegate.swift; sourceTree = "<group>"; };
 		3DB99B871E3BEB7F00331F59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		40E8534F94918454F9CD1721 /* Pods_MaduraSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaduraSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A0C01108711D885AAE00878 /* Pods-MaduraSdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		A8B0203B898AC1101D2F7A8D /* Pods_MaduraSdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaduraSdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C860204825F2B41CAD104AE9 /* Pods-MaduraSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk.debug.xcconfig"; sourceTree = "<group>"; };
-		D95864757DFE1003C58B0432 /* Pods-MaduraSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk.release.xcconfig"; sourceTree = "<group>"; };
+		48B2EF0688B2B86540C6BAED /* Pods-MaduraSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk.debug.xcconfig"; sourceTree = "<group>"; };
+		5B0C733230B35D18AE2FCC63 /* Pods_MaduraSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaduraSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5766C1013FC6F764EA3A49D /* Pods-MaduraSdkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A67ABF59A0682CAE2070201D /* Pods-MaduraSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaduraSdk.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk.release.xcconfig"; sourceTree = "<group>"; };
+		B7EDA4A6E3C3A462A0D2E845 /* Pods_MaduraSdkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaduraSdkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,7 @@
 			files = (
 				3D68B35E1E3B58BE0060DB72 /* MaduraSignalKit.framework in Frameworks */,
 				3D68B35D1E3B58B60060DB72 /* MaduraCallKit.framework in Frameworks */,
-				A1EAF2F9128FF1D5D06646CA /* Pods_MaduraSdk.framework in Frameworks */,
+				8C503FFE898D26B5F901E172 /* Pods_MaduraSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D5E74831E2AD5C7007E6C12 /* MaduraSdk.framework in Frameworks */,
-				7F601DED4EB60C530B73C6C4 /* Pods_MaduraSdkTests.framework in Frameworks */,
+				1F1D369A197A801381CD7FDA /* Pods_MaduraSdkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +111,7 @@
 				3D5E74861E2AD5C7007E6C12 /* MaduraSdkTests */,
 				3D5E747A1E2AD5C7007E6C12 /* Products */,
 				3D5E74D11E2AD98D007E6C12 /* Frameworks */,
-				D98EACA85C86C39EC8A8904A /* Pods */,
+				6DA8B5C1ECB58DC93050C56F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,7 @@
 		3D5E747B1E2AD5C7007E6C12 /* MaduraSdk */ = {
 			isa = PBXGroup;
 			children = (
+				3DB1D58C1E6DF553007016FF /* ios callkit */,
 				3D5E747C1E2AD5C7007E6C12 /* MaduraSdk.h */,
 				3D5E747D1E2AD5C7007E6C12 /* Info.plist */,
 				3D5E74CF1E2AD95F007E6C12 /* MaduraSdk.swift */,
@@ -155,8 +160,8 @@
 			children = (
 				3D2F570E1E3B065100C0985B /* MaduraCallKit.framework */,
 				3D2F570F1E3B065100C0985B /* MaduraSignalKit.framework */,
-				40E8534F94918454F9CD1721 /* Pods_MaduraSdk.framework */,
-				A8B0203B898AC1101D2F7A8D /* Pods_MaduraSdkTests.framework */,
+				5B0C733230B35D18AE2FCC63 /* Pods_MaduraSdk.framework */,
+				B7EDA4A6E3C3A462A0D2E845 /* Pods_MaduraSdkTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,13 +176,22 @@
 			name = "Podspec metadata";
 			sourceTree = "<group>";
 		};
-		D98EACA85C86C39EC8A8904A /* Pods */ = {
+		3DB1D58C1E6DF553007016FF /* ios callkit */ = {
 			isa = PBXGroup;
 			children = (
-				C860204825F2B41CAD104AE9 /* Pods-MaduraSdk.debug.xcconfig */,
-				D95864757DFE1003C58B0432 /* Pods-MaduraSdk.release.xcconfig */,
-				8A0C01108711D885AAE00878 /* Pods-MaduraSdkTests.debug.xcconfig */,
-				3C5D1C22E085229827640CFB /* Pods-MaduraSdkTests.release.xcconfig */,
+				3DB1D58D1E6DF56A007016FF /* CallKitManager.swift */,
+				3DB1D58F1E6DF590007016FF /* CallProviderDelegate.swift */,
+			);
+			name = "ios callkit";
+			sourceTree = "<group>";
+		};
+		6DA8B5C1ECB58DC93050C56F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48B2EF0688B2B86540C6BAED /* Pods-MaduraSdk.debug.xcconfig */,
+				A67ABF59A0682CAE2070201D /* Pods-MaduraSdk.release.xcconfig */,
+				A5766C1013FC6F764EA3A49D /* Pods-MaduraSdkTests.debug.xcconfig */,
+				01B32087A7D7F9064BCC2D4A /* Pods-MaduraSdkTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -200,12 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D5E748D1E2AD5C7007E6C12 /* Build configuration list for PBXNativeTarget "MaduraSdk" */;
 			buildPhases = (
-				B2DF3ED96916DC9424DED3C6 /* [CP] Check Pods Manifest.lock */,
+				AE0A888D5D5062D781C08363 /* [CP] Check Pods Manifest.lock */,
 				3D5E74741E2AD5C7007E6C12 /* Sources */,
 				3D5E74751E2AD5C7007E6C12 /* Frameworks */,
 				3D5E74761E2AD5C7007E6C12 /* Headers */,
 				3D5E74771E2AD5C7007E6C12 /* Resources */,
-				0B0F486F10784263F322021A /* [CP] Copy Pods Resources */,
+				D968C5A0F710AEF92E8523DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,12 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D5E74901E2AD5C7007E6C12 /* Build configuration list for PBXNativeTarget "MaduraSdkTests" */;
 			buildPhases = (
-				36857C9C5A8501000599CFD5 /* [CP] Check Pods Manifest.lock */,
+				03823DF45D855D68D4607882 /* [CP] Check Pods Manifest.lock */,
 				3D5E747E1E2AD5C7007E6C12 /* Sources */,
 				3D5E747F1E2AD5C7007E6C12 /* Frameworks */,
 				3D5E74801E2AD5C7007E6C12 /* Resources */,
-				36F75CF176A187A17FD515A8 /* [CP] Embed Pods Frameworks */,
-				F5DCB77E103835154DEC381A /* [CP] Copy Pods Resources */,
+				13C4F3D5F99132E548925733 /* [CP] Embed Pods Frameworks */,
+				094ED82789CEAD70BD0E7CA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -302,22 +316,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B0F486F10784263F322021A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		36857C9C5A8501000599CFD5 /* [CP] Check Pods Manifest.lock */ = {
+		03823DF45D855D68D4607882 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,7 +331,22 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		36F75CF176A187A17FD515A8 /* [CP] Embed Pods Frameworks */ = {
+		094ED82789CEAD70BD0E7CA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13C4F3D5F99132E548925733 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -347,7 +361,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2DF3ED96916DC9424DED3C6 /* [CP] Check Pods Manifest.lock */ = {
+		AE0A888D5D5062D781C08363 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,7 +376,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F5DCB77E103835154DEC381A /* [CP] Copy Pods Resources */ = {
+		D968C5A0F710AEF92E8523DC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,7 +388,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdkTests/Pods-MaduraSdkTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaduraSdk/Pods-MaduraSdk-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -391,9 +405,11 @@
 				3D2F57151E3B16B600C0985B /* MDCall.swift in Sources */,
 				3D2F57191E3B1AA200C0985B /* CallEngineObserved.swift in Sources */,
 				3D2F571C1E3B1B8200C0985B /* UIIncomingCallVC.swift in Sources */,
+				3DB1D58E1E6DF56A007016FF /* CallKitManager.swift in Sources */,
 				3D2F57131E3B161600C0985B /* MDCallDelegate.swift in Sources */,
 				3D26A9EF1E429358009B73EA /* UIOnCallCompletedVC.swift in Sources */,
 				3D2F57201E3B1BBA00C0985B /* UIOngoingCallVC.swift in Sources */,
+				3DB1D5901E6DF590007016FF /* CallProviderDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +535,7 @@
 		};
 		3D5E748E1E2AD5C7007E6C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C860204825F2B41CAD104AE9 /* Pods-MaduraSdk.debug.xcconfig */;
+			baseConfigurationReference = 48B2EF0688B2B86540C6BAED /* Pods-MaduraSdk.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -542,7 +558,7 @@
 		};
 		3D5E748F1E2AD5C7007E6C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D95864757DFE1003C58B0432 /* Pods-MaduraSdk.release.xcconfig */;
+			baseConfigurationReference = A67ABF59A0682CAE2070201D /* Pods-MaduraSdk.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -564,7 +580,7 @@
 		};
 		3D5E74911E2AD5C7007E6C12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A0C01108711D885AAE00878 /* Pods-MaduraSdkTests.debug.xcconfig */;
+			baseConfigurationReference = A5766C1013FC6F764EA3A49D /* Pods-MaduraSdkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QG8KA4P8TE;
@@ -578,7 +594,7 @@
 		};
 		3D5E74921E2AD5C7007E6C12 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C5D1C22E085229827640CFB /* Pods-MaduraSdkTests.release.xcconfig */;
+			baseConfigurationReference = 01B32087A7D7F9064BCC2D4A /* Pods-MaduraSdkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = QG8KA4P8TE;

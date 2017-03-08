@@ -24,6 +24,9 @@ open class MaduraSdk{
     private var uiOutgoingVC: UIViewController?
     private var uiIncommingVC: UIViewController?
     internal(set) public var call:MDCall?
+    internal var callManager: CallKitManager = CallKitManager()
+    internal var callProvider: CallProviderDelegate?
+
     
     /**
      intitation for MaduraSdk.
@@ -36,7 +39,9 @@ open class MaduraSdk{
     public init(apiKey:String, userId:String){
         self.apiKey = apiKey
         self.userId = userId
-        /* 
+        callProvider = CallProviderDelegate(callManager: callManager)
+
+        /*
         setup the important component : CallEngineMediator. The role of this component is to coordinate among UI, signalEngine and callEngine.
          */
         self.mediator = CallEngineMediator(withDelegate: self,userId: userId)
@@ -80,30 +85,33 @@ open class MaduraSdk{
         self.callEngine = nil
         self.signalEngine = nil
     }
-    
+    public func bebek(){
+        
+    }
     public func dial(to calleeId:String, balance:Double, fromViewController: UIViewController){
-        
-        let timestamp = Date().timeIntervalSince1970
-        let callSessionId = UUID().uuidString+self.userId!+String.init(format: "%.0f", timestamp)
-        print("session \(callSessionId)")
-        call = MDCall(from: self.userId!, to: calleeId, isOutgoing: true, callSessionId: "thisisroomchannel")
-        
-        self.mediator?.addCall(call: call!)
-        
-        let ui = UIOngoingCallVC()
-        ui.attachCallEngineInteractor(interactor: self.mediator!)
-        self.mediator?.attachUICommand(uiCommand: ui)
-        
-        
-        let navController = UINavigationController()
-        navController.viewControllers = [ui]
-        let root = navController
-    
-        fromViewController.navigationController?.present(root, animated: true, completion: nil)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.mediator?.startCall()
-        }
+          callManager.startCall(to: calleeId)
+
+//        let timestamp = Date().timeIntervalSince1970
+//        let callSessionId = UUID().uuidString+self.userId!+String.init(format: "%.0f", timestamp)
+//        print("session \(callSessionId)")
+//        call = MDCall(from: self.userId!, to: calleeId, isOutgoing: true, callSessionId: "thisisroomchannel")
+//        
+//        self.mediator?.addCall(call: call!)
+//        
+//        let ui = UIOngoingCallVC()
+//        ui.attachCallEngineInteractor(interactor: self.mediator!)
+//        self.mediator?.attachUICommand(uiCommand: ui)
+//        
+//        
+//        let navController = UINavigationController()
+//        navController.viewControllers = [ui]
+//        let root = navController
+//    
+//        fromViewController.navigationController?.present(root, animated: true, completion: nil)
+//        
+//        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+//            self.mediator?.startCall()
+//        }
  
     }
     
