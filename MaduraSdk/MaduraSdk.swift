@@ -26,7 +26,7 @@ open class MaduraSdk{
     internal(set) public var call:MDCall?
     internal var callManager: CallKitManager = CallKitManager()
     internal var callProvider: CallProviderDelegate?
-
+    internal var rootViewController: UIViewController?
     
     /**
      intitation for MaduraSdk.
@@ -39,7 +39,7 @@ open class MaduraSdk{
     public init(apiKey:String, userId:String){
         self.apiKey = apiKey
         self.userId = userId
-        callProvider = CallProviderDelegate(callManager: callManager)
+        callProvider = CallProviderDelegate(callManager: callManager, callActionController: self)
 
         /*
         setup the important component : CallEngineMediator. The role of this component is to coordinate among UI, signalEngine and callEngine.
@@ -85,67 +85,37 @@ open class MaduraSdk{
         self.callEngine = nil
         self.signalEngine = nil
     }
-    public func bebek(){
-        
-    }
+    
     public func dial(to calleeId:String, balance:Double, fromViewController: UIViewController){
-          callManager.startCall(to: calleeId)
-
-//        let timestamp = Date().timeIntervalSince1970
-//        let callSessionId = UUID().uuidString+self.userId!+String.init(format: "%.0f", timestamp)
-//        print("session \(callSessionId)")
-//        call = MDCall(from: self.userId!, to: calleeId, isOutgoing: true, callSessionId: "thisisroomchannel")
-//        
-//        self.mediator?.addCall(call: call!)
-//        
-//        let ui = UIOngoingCallVC()
-//        ui.attachCallEngineInteractor(interactor: self.mediator!)
-//        self.mediator?.attachUICommand(uiCommand: ui)
-//        
-//        
-//        let navController = UINavigationController()
-//        navController.viewControllers = [ui]
-//        let root = navController
-//    
-//        fromViewController.navigationController?.present(root, animated: true, completion: nil)
-//        
-//        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-//            self.mediator?.startCall()
-//        }
- 
+        self.rootViewController = fromViewController
+        callManager.startCall(to: calleeId)
     }
     
-    public func incommingCall(){
+    public func incommingCall(uuid: String, handle: String){
         
-        
+        callProvider?.reportIncomingCall(uuid: UUID() , handle: handle)
     }
     
 }
 
 extension MaduraSdk: CallEngineMediatorDelegate{
-    func didInvited(callSessionId: String, fromUserId: String) {
+    func didInvited(callSessionId: String, from userId: String) {
         if call != nil {
-            self.mediator?.isBussy()
+            self.mediator?.reportBussy(to: userId)
         }else{
-            
-            call = MDCall(from: fromUserId, to: self.userId!, isOutgoing: false, callSessionId: callSessionId)
+            call = MDCall( callSessionId: UUID(uuidString:callSessionId)! ,isOutgoing: false)
             self.mediator?.addCall(call: call!)
-            self.mediator?.isReady()
+            self.mediator?.reportReady(to: userId)
         }
     }
-    func didDialled(callSessionId:String, fromUserId:String){
-        print("calle did dial")
-        let ui = UIIncomingCallVC()
-        ui.attachCallEngineInteractor(interactor: self.mediator!)
-        self.mediator?.attachUICommand(uiCommand: ui)
+    func didDialled(callSessionId:String, from userId:String){
+        print("asem did dialled1: ")
+        print("asem did dialled2: \(callSessionId)")
+        print("asem did dialled2v: \(userId)")
+        callProvider?.reportIncomingCall(uuid: UUID() , handle: userId)
+        print("asem did dialled6: ")
         
-        
-        let navController = UINavigationController()
-        navController.viewControllers = [ui]
-        let root = navController
-        
-        let target = UIApplication.getViewController()
-        target.navigationController?.present(root, animated: true, completion: nil)
+   
     }
     
     func didAnswer(viewController: UIViewController) {
@@ -157,7 +127,9 @@ extension MaduraSdk: CallEngineMediatorDelegate{
         viewController.navigationController?.pushViewController(ui, animated: true)
         print("madura appplication didAnswer2")
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+        print("madura appplication didAnswer3")
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            print("madura appplication didAnswer4")
             self.mediator?.startCall()
         }
     }
@@ -166,6 +138,49 @@ extension MaduraSdk: CallEngineMediatorDelegate{
     }
     func didHangup() {
         print("mediaotr did hangup. goto ui oncall completed")
+    }
+}
+
+extension MaduraSdk : CXCallActionController{
+    func callActionDidEnd() {
+        
+    }
+    
+    func callActionDidHeld() {
+        
+    }
+    
+    func callActionDidStart(mdCall: MDCall) {
+        self.mediator?.addCall(call: mdCall)
+        
+        let ui = UIOngoingCallVC()
+        ui.attachCallEngineInteractor(interactor: self.mediator!)
+        self.mediator?.attachUICommand(uiCommand: ui)
+        
+        
+        let navController = UINavigationController()
+        navController.viewControllers = [ui]
+        let root = navController
+        
+        rootViewController?.navigationController?.present(root, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.mediator?.startCall()
+        }
+    }
+    
+    func callActionDidAnswer() {
+        print("madura appplication didAnswer1")
+        let ui = UIOngoingCallVC()
+        ui.attachCallEngineInteractor(interactor: self.mediator!)
+        self.mediator?.attachUICommand(uiCommand: ui)
+        
+        rootViewController?.navigationController?.pushViewController(ui, animated: true)
+        print("madura appplication didAnswer2")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.mediator?.startCall()
+        }
     }
 }
 

@@ -22,6 +22,7 @@
 		3D5E74881E2AD5C7007E6C12 /* MaduraSdkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E74871E2AD5C7007E6C12 /* MaduraSdkTests.swift */; };
 		3D5E748A1E2AD5C7007E6C12 /* MaduraSdk.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D5E747C1E2AD5C7007E6C12 /* MaduraSdk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D5E74D01E2AD95F007E6C12 /* MaduraSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E74CF1E2AD95F007E6C12 /* MaduraSdk.swift */; };
+		3D5F8F2E1E74AC3400B1DC87 /* CXCallActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5F8F2D1E74AC3400B1DC87 /* CXCallActionController.swift */; };
 		3D68B3531E3B3E430060DB72 /* CallEngineMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D68B3521E3B3E430060DB72 /* CallEngineMediator.swift */; };
 		3D68B35D1E3B58B60060DB72 /* MaduraCallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2F570E1E3B065100C0985B /* MaduraCallKit.framework */; };
 		3D68B35E1E3B58BE0060DB72 /* MaduraSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D2F570F1E3B065100C0985B /* MaduraSignalKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -65,6 +66,7 @@
 		3D5E74871E2AD5C7007E6C12 /* MaduraSdkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaduraSdkTests.swift; sourceTree = "<group>"; };
 		3D5E74891E2AD5C7007E6C12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D5E74CF1E2AD95F007E6C12 /* MaduraSdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaduraSdk.swift; sourceTree = "<group>"; };
+		3D5F8F2D1E74AC3400B1DC87 /* CXCallActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CXCallActionController.swift; sourceTree = "<group>"; };
 		3D68B3521E3B3E430060DB72 /* CallEngineMediator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallEngineMediator.swift; sourceTree = "<group>"; };
 		3DA458261E6C764400F83D3D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3DA458271E6C764400F83D3D /* MaduraSdk.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MaduraSdk.podspec; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				3D68B3521E3B3E430060DB72 /* CallEngineMediator.swift */,
 				3D26A9ED1E429358009B73EA /* UIOnCallCompletedVC.swift */,
 				3D26A9EE1E429358009B73EA /* UIOnCallCompletedVC.xib */,
+				3D5F8F2D1E74AC3400B1DC87 /* CXCallActionController.swift */,
 			);
 			path = MaduraSdk;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				3DA4582B1E6C764400F83D3D /* README.md in Sources */,
 				3D68B3531E3B3E430060DB72 /* CallEngineMediator.swift in Sources */,
 				3D2F57151E3B16B600C0985B /* MDCall.swift in Sources */,
+				3D5F8F2E1E74AC3400B1DC87 /* CXCallActionController.swift in Sources */,
 				3D2F57191E3B1AA200C0985B /* CallEngineObserved.swift in Sources */,
 				3D2F571C1E3B1B8200C0985B /* UIIncomingCallVC.swift in Sources */,
 				3DB1D58E1E6DF56A007016FF /* CallKitManager.swift in Sources */,

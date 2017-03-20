@@ -17,7 +17,7 @@ final class CallKitManager: NSObject{
         print("handle \(handle)")
         let startCallAction = CXStartCallAction(call:UUID(), handle: handle)
         print("startCallAction-handle \(startCallAction.handle)")
-        startCallAction.isVideo = true
+        startCallAction.isVideo = video
         
         let transaction = CXTransaction()
         transaction.addAction(startCallAction)
@@ -26,7 +26,7 @@ final class CallKitManager: NSObject{
     }
     
     func end(call: MDCall){
-        let endCallAction = CXEndCallAction(call: UUID(uuidString: call.callSessionId)!)
+        let endCallAction = CXEndCallAction(call: UUID())
         let transaction = CXTransaction()
         transaction.addAction(endCallAction)
         
@@ -43,5 +43,34 @@ final class CallKitManager: NSObject{
             }
             
         }
+    }
+    
+    // MARK: Call Management
+    
+    static let CallsChangedNotification = Notification.Name("CallManagerCallsChangedNotification")
+    
+    private(set) var calls = [MDCall]()
+    
+   
+    
+    func addCall(_ call: MDCall) {
+        calls.append(call)
+        
+        call.stateDidChange = { [weak self] in
+            self?.postCallsChangedNotification()
+        }
+        
+        postCallsChangedNotification()
+    }
+    
+   
+    
+    func removeAllCalls() {
+        calls.removeAll()
+        postCallsChangedNotification()
+    }
+    
+    private func postCallsChangedNotification() {
+        NotificationCenter.default.post(name: type(of: self).CallsChangedNotification, object: self)
     }
 }

@@ -15,10 +15,9 @@ public protocol MDCallAction{
     func dial(to userId:String, currentBalance balance:String, callType type:MDCallType)
 }
 public class MDCall{
-    private(set) public var callerId: String = ""
-    private(set) public var calleeId: String = ""
+    public var handle: String = ""
     private(set) public var isOutgoing: Bool = false
-    private(set) public var callSessionId: String = ""
+    private(set) public var callSessionId: UUID?
     var startingAt: Date?
     var startedAt: Date?
     var completedAt: Date?
@@ -88,9 +87,7 @@ public class MDCall{
         return Date().timeIntervalSince(connectDate)
     }
     
-    init(from callerId:String, to calleeId:String, isOutgoing:Bool, callSessionId:String) {
-        self.callerId = callerId
-        self.calleeId = calleeId
+    init(callSessionId:UUID,isOutgoing:Bool=true) {
         self.isOutgoing = isOutgoing
         self.callSessionId = callSessionId
     }

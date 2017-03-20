@@ -11,8 +11,8 @@ import MaduraCallKit
 import MaduraSignalKit
 
 protocol CallEngineMediatorDelegate{
-    func didDialled(callSessionId:String, fromUserId:String)
-    func didInvited(callSessionId:String, fromUserId:String)
+    func didDialled(callSessionId:String, from userId:String)
+    func didInvited(callSessionId:String, from userId:String)
     func didAnswer(viewController: UIViewController)
     func didHangup()
     func didCompleted()
@@ -45,24 +45,27 @@ class CallEngineMediator {
     }
     func startCall(){
         print("start call \(call?.callSessionId)")
-        self.signalEngineCommand?.subscribe(toCallSession: (self.call?.callSessionId)!)
-        callEngineCommand?.joinSession(callSessionId: (call?.callSessionId)!)
+        self.signalEngineCommand?.subscribe(toCallSession: (self.call?.callSessionId?.uuidString)!)
+        callEngineCommand?.joinSession(callSessionId: (call?.callSessionId?.uuidString)!)
     }
     
-    func isBussy(){
-        try! self.signalEngineCommand?.publish(event: .bussy, to: (self.call?.callerId)!, message: "")
+    func reportBussy(to userId:String){
+        try! self.signalEngineCommand?.publish(event: .bussy, to: userId, message: "")
         
     }
-    func isReady(){
-        try! self.signalEngineCommand?.publish(event: .ready, to: (self.call?.callerId)!, message: "")
-        self.delegate.didDialled(callSessionId: (self.call?.callSessionId)!, fromUserId: (self.call?.callerId)!)
+    func reportReady(to userId:String){
+        print("report ready..1:")
+        print("report ready..2:\(self.call?.callSessionId)")
+        print("report ready..3:")
+        try! self.signalEngineCommand?.publish(event: .ready, to: userId, message: "")
+        self.delegate.didDialled(callSessionId: (self.call?.callSessionId?.uuidString)!, from: userId)
     }
     
     func startPresence(){
         print("start to presence")
         timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { [weak self] _ in
             
-            try! self?.signalEngineCommand?.publish(event: .presence, to: (self?.call?.callSessionId)!)
+            try! self?.signalEngineCommand?.publish(event: .presence, to: (self?.call?.callSessionId?.uuidString)!)
         }
     }
     func stopPresence() {
@@ -100,8 +103,8 @@ extension CallEngineMediator: CallEngineResponse{
     public func userDidLeave() {
         print("mediator user did leave")
         stopPresence()
-        try! self.signalEngineCommand?.publish(event: .leave, to: (self.call?.callSessionId)!)
-        try! self.signalEngineCommand?.publish(event: .hangup, to: (self.call?.callSessionId)!)
+        try! self.signalEngineCommand?.publish(event: .leave, to: (self.call?.callSessionId?.uuidString)!)
+        try! self.signalEngineCommand?.publish(event: .hangup, to: (self.call?.callSessionId?.uuidString)!)
         let uiOngoingCallCommand: UIOngoingCallCommand = uiCallCommand as! UIOngoingCallCommand
         uiOngoingCallCommand.hangupDidSucceed()
     }
@@ -111,13 +114,13 @@ extension CallEngineMediator: CallEngineResponse{
     func localVideoDidLoad(any: Any?){
         let uiOngoingCallCommand: UIOngoingCallCommand = uiCallCommand as! UIOngoingCallCommand
         uiOngoingCallCommand.localVideoDidStreamed(any: any!)
-        try! self.signalEngineCommand?.publish(event: .join, to: (self.call?.callSessionId)!)
+        try! self.signalEngineCommand?.publish(event: .join, to: (self.call?.callSessionId?.uuidString)!)
         
         if (self.call?.isOutgoing)! {
-            try! self.signalEngineCommand?.publish(event: .dial, to: (self.call?.callSessionId)!)
-            try! self.signalEngineCommand?.publish(event: .invite, to: (self.call?.calleeId)!, message: (self.call?.callSessionId)!)
+            try! self.signalEngineCommand?.publish(event: .dial, to: (self.call?.callSessionId?.uuidString)!)
+            try! self.signalEngineCommand?.publish(event: .invite, to: (self.call?.handle)!, message: (self.call?.callSessionId?.uuidString)!)
         }else{
-            try! self.signalEngineCommand?.publish(event: .accept, to: (self.call?.callSessionId)!)
+            try! self.signalEngineCommand?.publish(event: .accept, to: (self.call?.callSessionId?.uuidString)!)
         }
         
         startPresence()
@@ -128,6 +131,11 @@ extension CallEngineMediator: CallEngineResponse{
     }
 }
 extension CallEngineMediator: SignalEngineResponse{
+    public func onReceiveDial() {
+        print("on receive dial ")
+        
+    }
+
     public func onCallCompleted() {
         
     }
@@ -151,10 +159,10 @@ extension CallEngineMediator: SignalEngineResponse{
     func callSessionDidUnsubscribe(){
         
     }
-    func onReceiveDial() {
-        
-        try! self.signalEngineCommand?.publish(event: .wait, to: (self.call?.callSessionId)!)
-        self.delegate.didDialled(callSessionId: (self.call?.callSessionId)!, fromUserId:  (self.call?.callerId)!)
+    func onReceiveDial(from userId: String) {
+        print("on receive dial from \(userId)")
+        try! self.signalEngineCommand?.publish(event: .wait, to: (self.call?.callSessionId?.uuidString)!)
+        self.delegate.didDialled(callSessionId: (self.call?.callSessionId?.uuidString)!, from: userId)
     }
     func calleeDidWaitingAnswer() {
         //uiCallCommand.callStatusDidChanged(status: "waiting...")
@@ -186,14 +194,14 @@ extension CallEngineMediator: SignalEngineResponse{
         self.callEngineCommand?.leaveSession()
     }
     func peopleDidPing() {
-        try! self.signalEngineCommand?.publish(event: .pong, to: (self.call?.callSessionId)!)
+        try! self.signalEngineCommand?.publish(event: .pong, to: (self.call?.callSessionId?.uuidString)!)
     }
     func onCompleted() {
         
         print("on complete")
     }
     func onReceiveInvitation(message: String, from: String) {
-        self.delegate.didInvited(callSessionId: message, fromUserId: from)
+        self.delegate.didInvited(callSessionId: message, from: from)
     }
     
     func onCalleeIsBussy(){
