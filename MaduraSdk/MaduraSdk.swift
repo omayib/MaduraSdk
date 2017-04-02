@@ -36,10 +36,10 @@ open class MaduraSdk{
         - userId : unique user identifier such as email or phone number.
      
      */
-    public init(apiKey:String, userId:String){
+    public init(apiKey:String, userId:String, appDisplayName:String){
         self.apiKey = apiKey
         self.userId = userId
-        callProvider = CallProviderDelegate(callManager: callManager, callActionController: self)
+        callProvider = CallProviderDelegate(callManager: callManager, callActionController: self, appDisplayName: appDisplayName)
 
         /*
         setup the important component : CallEngineMediator. The role of this component is to coordinate among UI, signalEngine and callEngine.

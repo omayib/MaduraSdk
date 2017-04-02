@@ -12,13 +12,14 @@ import CallKit
 
 final class CallProviderDelegate: NSObject{
     let callManager: CallKitManager
-    private let provider: CXProvider
+    private let provider: CXProvider?
     let callActionController: CXCallActionController
     
+    
     /// The app's provider configuration, representing its CallKit capabilities
-    static var providerConfiguration: CXProviderConfiguration {
-        let localizedName = NSLocalizedString("APPLICATION_NAME", comment: "Name of application")
-        let providerConfiguration = CXProviderConfiguration(localizedName: localizedName)
+   /* static var providerConfiguration: CXProviderConfiguration {
+        let localizedName = NSLocalizedString("Madura Call")
+        let providerConfiguration = CXProviderConfiguration(localizedName: self.appDisplayName)
         
         providerConfiguration.supportsVideo = true
         
@@ -33,13 +34,29 @@ final class CallProviderDelegate: NSObject{
         providerConfiguration.ringtoneSound = "Ringtone.caf"
         
         return providerConfiguration
-    }
-    init(callManager: CallKitManager, callActionController: CXCallActionController) {
+    }*/
+    init(callManager: CallKitManager, callActionController: CXCallActionController, appDisplayName:String) {
         self.callActionController = callActionController
         self.callManager = callManager
-        provider = CXProvider(configuration: type(of: self).providerConfiguration)
+        
+        let providerConfiguration = CXProviderConfiguration(localizedName: appDisplayName)
+        
+        providerConfiguration.supportsVideo = true
+        
+        providerConfiguration.maximumCallsPerCallGroup = 1
+        
+        providerConfiguration.supportedHandleTypes = [.phoneNumber]
+        
+        if let iconMaskImage = UIImage(named: "IconMask") {
+            providerConfiguration.iconTemplateImageData = UIImagePNGRepresentation(iconMaskImage)
+        }
+        
+        providerConfiguration.ringtoneSound = "Ringtone.caf"
+        
+        self.provider = CXProvider(configuration:providerConfiguration )
+        
         super.init()
-        provider.setDelegate(self, queue: nil)
+        provider?.setDelegate(self, queue: nil)
         
     }
     /// Use CXProvider to report the incoming call to the system
@@ -51,7 +68,7 @@ final class CallProviderDelegate: NSObject{
         update.hasVideo = hasVideo
         
         // Report the incoming call to the system
-        provider.reportNewIncomingCall(with: uuid, update: update) { error in
+        provider?.reportNewIncomingCall(with: uuid, update: update) { error in
             /*
              Only add incoming call to the app's list of calls if the call was allowed (i.e. there was no error)
              since calls may be "denied" for various legitimate reasons. See CXErrorCodeIncomingCallError.
