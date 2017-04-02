@@ -97,14 +97,25 @@ extension CallProviderDelegate: CXProviderDelegate{
         
     }
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
+        guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
+            action.fail()
+            return
+        }
+        call.answerMDCall()
         action.fulfill(withDateConnected: Date())
         print("provider answerCallAction")
         callActionController.callActionDidAnswer()
         
     }
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
-        action.fulfill(withDateEnded: Date())
+        guard let call = callManager.callWithUUID(uuid: action.callUUID) else {
+            action.fail()
+            return
+        }
         print("provider CXEndCallAction")
+        call.endMDCall()
+        callManager.removeAllCalls()
+        action.fulfill(withDateEnded: Date())
         //
     }
     func provider(_ provider: CXProvider, perform action: CXSetHeldCallAction) {

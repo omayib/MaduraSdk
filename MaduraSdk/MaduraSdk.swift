@@ -93,7 +93,7 @@ open class MaduraSdk{
     
     public func incommingCall(uuid: String, handle: String){
         
-        callProvider?.reportIncomingCall(uuid: UUID() , handle: handle)
+        callProvider?.reportIncomingCall(uuid: UUID(uuidString: uuid)! , handle: handle)
     }
     
 }
@@ -112,7 +112,7 @@ extension MaduraSdk: CallEngineMediatorDelegate{
         print("asem did dialled1: ")
         print("asem did dialled2: \(callSessionId)")
         print("asem did dialled2v: \(userId)")
-        callProvider?.reportIncomingCall(uuid: UUID() , handle: userId)
+        callProvider?.reportIncomingCall(uuid: UUID(uuidString:callSessionId)! , handle: userId)
         print("asem did dialled6: ")
         
    
@@ -134,10 +134,16 @@ extension MaduraSdk: CallEngineMediatorDelegate{
         }
     }
     func didCompleted() {
+        print("mediaotr did didCompleted. goto ui oncall completed")
         self.call = nil
     }
     func didHangup() {
         print("mediaotr did hangup. goto ui oncall completed")
+        guard let call = self.mediator?.call else {
+            print("call is nill")
+            return
+        }
+        callManager.end(call: call)
     }
 }
 
@@ -175,10 +181,19 @@ extension MaduraSdk : CXCallActionController{
         ui.attachCallEngineInteractor(interactor: self.mediator!)
         self.mediator?.attachUICommand(uiCommand: ui)
         
-        rootViewController?.navigationController?.pushViewController(ui, animated: true)
+        
+        let navController = UINavigationController()
+        navController.viewControllers = [ui]
+        let root = navController
+
+        
+        UIApplication.getViewController().navigationController?.present(root, animated: true, completion: nil)
+
         print("madura appplication didAnswer2")
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+        print("madura appplication didAnswer3")
+        DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+            print("madura appplication didAnswer4")
             self.mediator?.startCall()
         }
     }

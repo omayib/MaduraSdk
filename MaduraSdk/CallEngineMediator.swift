@@ -107,6 +107,7 @@ extension CallEngineMediator: CallEngineResponse{
         try! self.signalEngineCommand?.publish(event: .hangup, to: (self.call?.callSessionId?.uuidString)!)
         let uiOngoingCallCommand: UIOngoingCallCommand = uiCallCommand as! UIOngoingCallCommand
         uiOngoingCallCommand.hangupDidSucceed()
+        self.delegate.didHangup()
     }
     func userDidOffline() {
         

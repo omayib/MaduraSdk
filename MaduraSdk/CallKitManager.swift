@@ -26,7 +26,8 @@ final class CallKitManager: NSObject{
     }
     
     func end(call: MDCall){
-        let endCallAction = CXEndCallAction(call: UUID())
+        print("callkitmanager endcall with callUUID \(call.callSessionId!)")
+        let endCallAction = CXEndCallAction(call: call.callSessionId!)
         let transaction = CXTransaction()
         transaction.addAction(endCallAction)
         
@@ -51,7 +52,13 @@ final class CallKitManager: NSObject{
     
     private(set) var calls = [MDCall]()
     
-   
+    func callWithUUID(uuid: UUID) -> MDCall? {
+        guard let index = calls.index(where: { $0.callSessionId == uuid }) else {
+            print("call is nil")
+            return nil
+        }
+        return calls[index]
+    }
     
     func addCall(_ call: MDCall) {
         calls.append(call)
@@ -63,7 +70,7 @@ final class CallKitManager: NSObject{
         postCallsChangedNotification()
     }
     
-   
+  
     
     func removeAllCalls() {
         calls.removeAll()

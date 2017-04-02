@@ -58,6 +58,10 @@ extension UIOngoingCallVC: UIOngoingCallCommand{
         self.callCommand = interactor
     }
     func localVideoDidStreamed(any: Any){
+        if localVideoView == nil {
+            print("localVideoView is nil")
+            return
+        }
         let lovalView = any as! UIView
         self.localVideoView.frame.size = CGSize(width: 84.5, height: 150.0)
         lovalView.frame.size = self.localVideoView.frame.size
@@ -66,6 +70,10 @@ extension UIOngoingCallVC: UIOngoingCallCommand{
         
     }
     func remoteVideoDidStreamed(any: Any){
+        if remoteVideoView == nil {
+            print("localVideoView is nil")
+            return
+        }
         // localView 640 x 360
         let remoteView = any as! UIView
         self.remoteVideoView.frame.size = CGSize(width: 84.5, height: 150.0)
