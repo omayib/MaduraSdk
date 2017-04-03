@@ -99,6 +99,15 @@ open class MaduraSdk{
 }
 
 extension MaduraSdk: CallEngineMediatorDelegate{
+    func didCancel() {
+        print("mediaotr did hangup. goto ui oncall completed")
+        guard let call = self.mediator?.call else {
+            print("call is nill")
+            return
+        }
+        callManager.end(call: call)
+    }
+
     func didInvited(callSessionId: String, from userId: String) {
         if call != nil {
             self.mediator?.reportBussy(to: userId)

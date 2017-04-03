@@ -16,6 +16,7 @@ protocol CallEngineMediatorDelegate{
     func didAnswer(viewController: UIViewController)
     func didHangup()
     func didCompleted()
+    func didCancel()
 }
 
 class CallEngineMediator {
@@ -103,6 +104,7 @@ extension CallEngineMediator: CallEngineResponse{
     public func userDidLeave() {
         print("mediator user did leave")
         stopPresence()
+        try! self.signalEngineCommand?.publish(event: .end, to: (self.call?.handle)!, message: "end call")
         try! self.signalEngineCommand?.publish(event: .leave, to: (self.call?.callSessionId?.uuidString)!)
         try! self.signalEngineCommand?.publish(event: .hangup, to: (self.call?.callSessionId?.uuidString)!)
         let uiOngoingCallCommand: UIOngoingCallCommand = uiCallCommand as! UIOngoingCallCommand
@@ -169,7 +171,8 @@ extension CallEngineMediator: SignalEngineResponse{
         //uiCallCommand.callStatusDidChanged(status: "waiting...")
     }
     func callerDidCancel() {
-        
+        print("a people did cancel")
+        self.delegate.didCancel()
     }
     func peopleDidJoin() {
         print("a people did join")
