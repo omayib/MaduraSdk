@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "MaduraSdk"
-    s.version      = "0.0.11"
+    s.version      = "0.0.12"
     s.summary      = "make it simple dev call enggine."
 
     s.homepage     = "http://qiscus.com"
